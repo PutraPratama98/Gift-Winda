@@ -21,28 +21,40 @@
             font-family: Arial, sans-serif;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: auto; /* Mengizinkan scrolling */
+            padding-top: 120px; /* Menyesuaikan agar tidak tertutup header */
         }
-        
+
+        /* Header berbentuk box */
+        header {
+            background-color: rgba(255, 192, 203, 0.9); /* Warna pink dengan transparansi */
+            width: 80%;
+            padding: 15px;
+            border-radius: 20px; /* Membuat sudut membulat */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
         /* Mengatur tampilan teks judul */
         h1 {
             color: white;
-            font-size: 48px; /* Ukuran tulisan */
-            text-decoration: underline;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            font-size: 32px; /* Ukuran tulisan */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             -webkit-text-stroke: 1px black;
-            margin-bottom: 50px; /* Jarak bawah dari ikon */
-            position: absolute;
-            top: 20px;
+            margin: 0;
         }
 
-        /* Mengatur tampilan ikon kado */
-        .gift-icon {
-            font-size: 70px;
-            color: #e3b3a9;
-            margin-bottom: 20px; /* Jarak bawah dari tombol */
+        /* Mengatur ikon kado */
+        .gift-image {
+            width: 150px;
+            margin-top: 50px; /* Jarak dari header */
+            margin-bottom: 50px; /* Jarak ke tombol */
         }
-        
+
         /* Mengatur tampilan tombol */
         button {
             background-color: #966c44;
@@ -62,11 +74,13 @@
     </style>
 </head>
 <body>
-    <!-- Judul halaman -->
-    <h1> </h1>
+    <!-- Header berbentuk box -->
+    <header>
+        <h1>Happy Birthday Winda Yani Hutasoit</h1>
+    </header>
 
     <!-- Ikon kado -->
-    <img src="gift-icon.png" alt="Ikon Kado" width="450">
+    <img src="gift-icon.png" alt="Ikon Kado" class="gift-image">
 
     <!-- Tombol untuk membuka kado -->
     <button onclick="openGift()">Buka Kado</button>
