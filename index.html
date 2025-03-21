@@ -1,119 +1,63 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Winda</title>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun Winda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Mengatur tampilan dasar halaman */
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffecf2; /* Warna latar belakang */
-            background-image: url('gl-index.jpg'); /* Gambar latar belakang */
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            position: relative;
-            overflow: auto; /* Mengizinkan scrolling */
-            padding-top: 140px; /* Memberikan ruang agar tidak tertutup header */
-        }
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
 
-        /* Header berbentuk box */
-        header {
-            background-color: #c28f62; /* Warna yang disesuaikan */
-            padding: 15px 30px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            display: inline-block;
-        }
+      .background {
+        background-image: url('/mnt/data/index.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
 
-        /* Mengatur tampilan teks judul */
-        h1 {
-            color: white;
-            font-size: 38px; /* Ukuran diperbesar */
-            font-weight: bold;
-            text-decoration: underline; /* Menambahkan underline */
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Efek shadow */
-            margin: 0;
-        }
-
-        /* Mengatur ikon kado */
-        .gift-image {
-            width: 150px;
-            margin-top: 100px; /* Jarak dari header */
-            margin-bottom: 50px; /* Jarak ke tombol */
-        }
-
-        /* Mengatur tampilan tombol */
-        button {
-            background-color: #c28f62; /* Warna disamakan dengan header */
-            color: white;
-            border: 2px solid #e1c796;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        
-        /* Efek hover pada tombol */
-        button:hover {
-            background-color: #a77750;
-        }
+      .center-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     </style>
-</head>
-<body>
-    <!-- Header berbentuk box -->
-    <header>
-        <h1>Happy Birthday Winda Yani Hutasoit</h1>
-    </header>
+  </head>
 
-    <!-- Ikon kado -->
-    <img src="gift-icon.png" alt="Ikon Kado" width="400">
+  <body>
+    <div class="background">
+      <!-- Ikon gift berada di tengah -->
+      <img
+        src="/mnt/data/gift-icon.png"
+        alt="Ikon Kado"
+        class="center-icon w-32 h-32 md:w-48 md:h-48 hover:scale-110 transition-transform duration-300 cursor-pointer"
+        onclick="tampilkanPesan()"
+      />
 
-    <!-- Tombol untuk membuka kado -->
-    <button onclick="openGift()">Buka Kado</button>
+      <!-- Pesan tersembunyi -->
+      <div
+        id="pesan"
+        class="hidden absolute top-[60%] left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 rounded-lg p-6 shadow-xl text-center max-w-md"
+      >
+        <h1 class="text-2xl font-bold mb-4 text-[#8b4513]">Selamat Ulang Tahun!</h1>
+        <p class="text-[#333]">
+          Semoga Winda Yani selalu diberkahi kesehatan, kebahagiaan, dan sukses selalu! 🎉🎂
+        </p>
+      </div>
+    </div>
 
-    <!-- Memuat library confetti dari CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2"></script>
     <script>
-        function openGift() {
-            // Efek confetti ketika tombol diklik
-            const duration = 5 * 1000; // Durasi efek dalam milidetik
-            const animationEnd = Date.now() + duration;
-            const colors = ['#ff0000', '#ff8000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#8000ff'];
-
-            (function frame() {
-                const timeLeft = animationEnd - Date.now();
-                if (timeLeft <= 0) {
-                    // Setelah efek selesai, arahkan ke halaman beranda
-                    window.location.href = 'beranda.html';
-                    return;
-                }
-                
-                const particleCount = 50 * (timeLeft / duration); // Jumlah partikel confetti
-                confetti({
-                    particleCount: particleCount,
-                    spread: 80,
-                    startVelocity: 30,
-                    colors: colors,
-                    origin: { x: Math.random(), y: Math.random() - 0.2 }
-                });
-                requestAnimationFrame(frame);
-            })();
-        }
+      function tampilkanPesan() {
+        const pesan = document.getElementById('pesan');
+        pesan.classList.toggle('hidden');
+      }
     </script>
-</body>
+  </body>
 </html>
