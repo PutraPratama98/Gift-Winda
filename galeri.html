@@ -1,0 +1,65 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Pinterest Style Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    /* Biar gambar full lebar di dalam column */
+    .masonry-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem; /* Rounded seperti Pinterest */
+    }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <div class="flex">
+   <!-- Sidebar -->
+   <div class="w-16 bg-white h-screen flex flex-col items-center py-4 space-y-4">
+    <a class="text-black text-2xl" href="beranda.html">
+     <i class="fas fa-home"></i>
+    </a>
+    <a class="text-black text-2xl" href="index.html">
+     <i class="fas fa-user-circle"></i>
+    </a>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-4">
+    <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+     <!-- Item -->
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x400" alt="Image 1">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x500" alt="Image 2">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x350" alt="Image 3">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x450" alt="Image 4">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x600" alt="Image 5">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x300" alt="Image 6">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x480" alt="Image 7">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x520" alt="Image 8">
+     </div>
+     <div class="masonry-item">
+      <img src="https://placehold.co/300x370" alt="Image 9">
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
