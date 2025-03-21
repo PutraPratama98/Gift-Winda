@@ -6,22 +6,26 @@
 
     <title>Happy Birthday Winda</title>
 
-     <!-- Tailwind CSS -->
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Import Font Shrikhand -->
+    <!-- Import Google Font Shrikhand -->
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 
-    <!-- CSS Custom for Stroke -->
+    <!-- Custom Style -->
     <style>
+      body {
+        font-family: 'Arial', sans-serif;
+      }
+
+      /* Class tambahan untuk text stroke */
       .text-stroke {
-        -webkit-text-stroke: 2px #000; /* Ketebalan & warna garis tepi */
+        -webkit-text-stroke: 2px #000; /* Tebal garis tepi 2px warna hitam */
       }
     </style>
   </head>
 
   <body class="flex items-center justify-center min-h-screen bg-[#d2b48c] relative overflow-hidden">
-
     <!-- Background utama -->
     <img
       src="index.jpg"
@@ -32,33 +36,33 @@
     <!-- Overlay agar teks tetap terbaca -->
     <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
 
-    <!-- Container -->
-    <div class="text-center p-4">
-      <!-- Judul Happy Birthday -->
+    <!-- Kontainer utama isi ucapan -->
+    <div class="relative z-10 flex flex-col items-center justify-center text-center p-4">
+      
+      <!-- Judul Ucapan -->
       <h1
-        class="text-5xl md:text-6xl font-bold text-white underline drop-shadow-lg text-stroke"
+        class="text-4xl md:text-5xl font-bold text-white underline drop-shadow-lg text-stroke mb-2"
         style="font-family: 'Shrikhand', cursive;"
       >
         Happy Birthday
       </h1>
 
-      <!-- Nama Winda -->
+      <!-- Nama -->
       <h2
-        class="text-4xl md:text-5xl font-bold text-white underline drop-shadow-lg text-stroke mt-4"
+        class="text-3xl md:text-4xl font-bold text-white underline drop-shadow-lg text-stroke mb-6"
         style="font-family: 'Shrikhand', cursive;"
       >
         Winda Yani Hutasoit
       </h2>
-    </div>
 
-     <!-- Foto Profil (Super Besar) -->
-<div class="w-[400px] h-[400px] rounded-full border-[10px] border-yellow-500 overflow-hidden shadow-2xl mb-6 bg-white">
-  <img
-    src="gift-icon.png"
-    alt="Winda Yani Hutasoit"
-    class="w-full h-full object-cover"
-  />
-</div>
+      <!-- Foto Profil (Super Besar) -->
+      <div class="w-[400px] h-[400px] rounded-full border-[10px] border-yellow-500 overflow-hidden shadow-2xl mb-6 bg-white">
+        <img
+          src="gift-icon.png"
+          alt="Winda Yani Hutasoit"
+          class="w-full h-full object-cover"
+        />
+      </div>
 
       <!-- Tombol Buka -->
       <button
