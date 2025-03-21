@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Cinta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080');">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="relative bg-[#d2a679] bg-opacity-90 p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+            
+            <!-- Tombol Kiri -->
+            <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
+                <button id="prevBtn" class="bg-[#d2a679] text-white p-4 rounded-full shadow-lg hover:bg-[#b88a60] transition">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <!-- Tombol Kanan -->
+            <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+                <button id="nextBtn" class="bg-[#d2a679] text-white p-4 rounded-full shadow-lg hover:bg-[#b88a60] transition">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Teks Quotes -->
+            <div class="text-center">
+                <p id="quoteText" class="text-black text-lg font-serif mb-4 transition duration-500 ease-in-out">
+                    “Cinta sejati adalah tentang memahami dan menghargai, bukan mengubah.”
+                </p>
+
+                <!-- Tombol Back -->
+                <button id="backBtn" class="bg-[#d2a679] text-black px-4 py-2 rounded-full shadow-lg hover:bg-[#b88a60] transition">
+                    BACK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "“Cinta sejati adalah tentang memahami dan menghargai, bukan mengubah.”",
+            "“Aku akan selalu ada di sisimu, tidak peduli seberapa sulit perjalanan ini.”",
+            "“Setiap hari bersamamu adalah hadiah yang tak ternilai bagiku.”",
+            "“Jangan pernah ragu, kamu adalah cahaya dalam hidupku, dan aku akan selalu mendukungmu.”",
+            "“Kamu lebih kuat dari yang kamu kira, dan aku akan selalu ada untuk mengingatkanmu.”",
+            "“Percayalah, semua yang kita jalani akan membawa kita ke tempat yang lebih indah.”",
+            "“Kamu tidak pernah sendiri, aku selalu bersamamu dalam doa dan hati.”",
+            "“Cinta kita bukan tentang kesempurnaan, tapi bagaimana kita tetap bertahan bersama.”",
+            "“Aku bangga padamu, dengan semua yang kamu lakukan dan semua yang akan kamu capai.”",
+            "“Hari ini mungkin sulit, tapi besok akan lebih baik. Aku percaya padamu.”"
+        ];
+
+        let currentIndex = 0;
+
+        const quoteText = document.getElementById('quoteText');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const backBtn = document.getElementById('backBtn');
+
+        function showQuote(index) {
+            quoteText.style.opacity = 0;
+            setTimeout(() => {
+                quoteText.textContent = quotes[index];
+                quoteText.style.opacity = 1;
+            }, 300);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+            showQuote(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % quotes.length;
+            showQuote(currentIndex);
+        });
+
+        // Fungsi tombol back
+        backBtn.addEventListener('click', () => {
+            window.location.href = 'beranda.html';
+        });
+    </script>
+</body>
+</html>
