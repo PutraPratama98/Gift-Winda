@@ -18,7 +18,7 @@
         font-family: 'Arial', sans-serif;
       }
 
-      /* Class tambahan untuk text stroke */
+      /* Tambahin stroke garis tepi ke text */
       .text-stroke {
         -webkit-text-stroke: 2px #000; /* Tebal garis tepi 2px warna hitam */
       }
@@ -26,6 +26,7 @@
   </head>
 
   <body class="flex items-center justify-center min-h-screen bg-[#d2b48c] relative overflow-hidden">
+
     <!-- Background utama -->
     <img
       src="index.jpg"
@@ -33,12 +34,12 @@
       class="absolute inset-0 w-full h-full object-cover z-0"
     />
 
-    <!-- Overlay agar teks tetap terbaca -->
+    <!-- Overlay supaya teks dan tombol tetap jelas -->
     <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
 
     <!-- Kontainer utama isi ucapan -->
     <div class="relative z-10 flex flex-col items-center justify-center text-center p-4">
-      
+
       <!-- Judul Ucapan -->
       <h1
         class="text-4xl md:text-5xl font-bold text-white underline drop-shadow-lg text-stroke mb-2"
@@ -55,21 +56,22 @@
         Winda Yani Hutasoit
       </h2>
 
-      <!-- Foto Profil (Super Besar) -->
+      <!-- Foto Profil Super Besar -->
       <div class="w-[400px] h-[400px] rounded-full border-[10px] border-yellow-500 overflow-hidden shadow-2xl mb-6 bg-white">
         <img
-          src="icon-gift.jpg"
+          src="icon-gift.png"
           alt="Winda Yani Hutasoit"
           class="w-full h-full object-cover"
         />
       </div>
 
-      <!-- Tombol Buka -->
+      <!-- Tombol Buka Lebih Besar & Ada Garis Tepi -->
       <button
-        class="bg-[#8b4513] text-white text-xl font-bold py-3 px-8 rounded-full shadow-md hover:bg-[#5c3310] transition duration-300 ease-in-out"
+        class="relative bg-[#8b4513] border-4 border-yellow-400 text-white text-3xl font-bold py-5 px-16 rounded-full shadow-2xl hover:bg-[#5c3310] transition duration-300 ease-in-out z-10"
       >
         Buka
       </button>
+
     </div>
   </body>
 </html>
