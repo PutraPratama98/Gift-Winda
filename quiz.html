@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('quiz.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="bg-[#d2a15b] bg-opacity-90 p-6 rounded-lg shadow-lg max-w-md mx-auto">
+        <div class="bg-[#d2a15b] bg-opacity-90 p-4 rounded-lg shadow-lg">
+            
+            <!-- Judul Quiz -->
+            <div class="flex justify-center items-center mb-4 relative">
+                <h1 class="text-xl font-bold text-center">QUIZ</h1>
+                <div class="absolute right-0 flex space-x-2">
+                    <span class="w-3 h-3 bg-[#d2a15b] rounded-full border border-black"></span>
+                    <span class="w-3 h-3 bg-[#d2a15b] rounded-full border border-black"></span>
+                    <span class="w-3 h-3 bg-[#d2a15b] rounded-full border border-black"></span>
+                </div>
+            </div>
+
+            <!-- Tempat Pertanyaan -->
+            <p id="question" class="text-center text-lg mb-4 text-black">
+                "Jika suatu hari aku kehilangan ingatan tentangmu, hal apa yang paling ingin kamu ceritakan kepadaku agar aku bisa jatuh cinta padamu lagi?"
+            </p>
+
+            <!-- Input Jawaban -->
+            <textarea id="answer" rows="4" placeholder="Tulis jawabanmu di sini..." class="w-full p-2 rounded-lg border border-black mb-4"></textarea>
+
+            <!-- Tombol Next -->
+            <div class="flex justify-center">
+                <button onclick="nextQuestion()" id="nextButton" class="bg-[#d2a15b] text-black font-bold py-2 px-4 rounded-full flex items-center border border-black">
+                    NEXT <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            `"Jika suatu hari aku kehilangan ingatan tentangmu, hal apa yang paling ingin kamu ceritakan kepadaku agar aku bisa jatuh cinta padamu lagi?"`,
+            `"Saat dunia terasa berat dan kamu merasa lelah, apa yang kamu harapkan dariku agar aku bisa menjadi tempat pulang terbaik untukmu?"`,
+            `"Jika kamu bisa meminta satu hal yang tidak akan pernah berubah dariku, apa itu? Dan kenapa itu begitu penting untukmu?"`,
+            `"Apa ketakutan terbesar yang kamu miliki dalam hubungan kita, dan bagaimana aku bisa meyakinkanmu bahwa aku akan selalu ada untukmu?"`,
+            `"Di antara semua momen yang pernah kita lalui bersama, momen mana yang paling membuatmu merasa dicintai dan dihargai? Dan kenapa momen itu begitu spesial bagimu?"`
+        ];
+
+        let currentQuestion = 0;
+        const answers = [];
+
+        function nextQuestion() {
+            const userAnswer = document.getElementById('answer').value.trim();
+
+            if (!userAnswer) {
+                alert("Yuk, isi jawabannya dulu!");
+                return;
+            }
+
+            answers.push({
+                question: questions[currentQuestion],
+                answer: userAnswer
+            });
+
+            currentQuestion++;
+            document.getElementById('answer').value = '';
+
+            if (currentQuestion < questions.length) {
+                document.getElementById('question').innerText = questions[currentQuestion];
+            } else {
+                document.getElementById('question').innerText = `"Terima kasih sudah menjawab semuanya!"`;
+                document.getElementById('answer').style.display = "none";
+                document.getElementById('nextButton').style.display = "none";
+
+                // Kirim ke WhatsApp setelah 2 detik
+                setTimeout(sendToWhatsApp, 2000);
+            }
+        }
+
+        function sendToWhatsApp() {
+            const nomorWA = "6281211875702";
+
+            let message = "Halo! Berikut jawaban quiz aku:%0A%0A";
+            answers.forEach((item, index) => {
+                message += `${index + 1}. ${item.question}%0AJawaban: ${item.answer}%0A%0A`;
+            });
+
+            const whatsappURL = `https://wa.me/${nomorWA}?text=${message}`;
+
+            window.location.href = whatsappURL;
+        }
+    </script>
+
+</body>
+</html>
