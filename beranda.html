@@ -1,122 +1,91 @@
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Happy Birthday</title>
 
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
-  <!-- Google Fonts: Shrikhand -->
-  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Poppins + Shrikhand -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Shrikhand&display=swap"
+        rel="stylesheet" />
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
-      background-image: url('beranda.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
 
-    .font-shrikhand {
-      font-family: 'Shrikhand', cursive;
-    }
+        h1,
+        h2 {
+            font-family: 'Shrikhand', cursive;
+            color: #fff;
+            text-shadow:
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+    </style>
+</head>
 
-    .text-outline {
-      color: white;
-      text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-    }
+<body class="flex items-center justify-center min-h-screen bg-cover bg-center"
+    style="background-image: url('beranda.jpg');">
 
-    .underline-decor {
-      text-decoration: underline;
-      text-underline-offset: 6px;
-      text-decoration-thickness: 2px;
-    }
+    <div class="text-center">
+        <!-- TULISAN DENGAN GARIS TEPI -->
+        <h1 class="text-5xl font-bold mb-4">
+            <span class="inline-block"><i class="fas fa-party-hat"></i></span>
+            Happy Birthday
+            <span class="inline-block"><i class="fas fa-party-hat"></i></span>
+        </h1>
+        <h2 class="text-4xl font-bold mb-8">
+            <span class="inline-block"><i class="fas fa-heart"></i></span>
+            Winda Yani Hutasoit
+            <span class="inline-block"><i class="fas fa-heart"></i></span>
+        </h2>
 
-    /* Custom button border */
-    .btn-border {
-      border: 2px solid #d4af37; /* warna emas */
-      transition: all 0.3s ease;
-    }
+        <!-- KONTEN CARD -->
+        <div class="flex flex-wrap justify-center gap-4">
 
-    .btn-border:hover {
-      background-color: #d4af37; /* hover warna emas */
-      color: white;
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-  </style>
- </head>
+            <!-- Card 1: Surat -->
+            <div class="bg-white p-4 rounded-lg shadow-lg border-2 border-yellow-400 w-40">
+                <img src="surat.png" alt="Surat" class="mx-auto mb-2 h-24" />
+                <button class="border border-yellow-500 bg-yellow-400 text-white py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300">Buka</button>
+            </div>
 
- <body class="flex items-center justify-center min-h-screen bg-cover bg-center">
-  <div class="text-center">
-   <!-- Judul Utama -->
-   <h1 class="text-5xl font-shrikhand text-outline underline-decor mb-4">
-    <span class="inline-block">
-     <i class="fas fa-party-hat"></i>
-    </span>
-    Happy Birthday
-    <span class="inline-block">
-     <i class="fas fa-party-hat"></i>
-    </span>
-   </h1>
+            <!-- Card 2: Quotes -->
+            <div class="bg-white p-4 rounded-lg shadow-lg border-2 border-yellow-400 w-40">
+                <img src="quotes.png" alt="Quotes" class="mx-auto mb-2 h-24" />
+                <button class="border border-pink-500 bg-pink-400 text-white py-2 px-4 rounded-full hover:bg-pink-500 transition duration-300">Buka</button>
+            </div>
 
-   <!-- Subjudul -->
-   <h2 class="text-4xl font-shrikhand text-outline underline-decor mb-8">
-    <span class="inline-block">
-     <i class="fas fa-heart"></i>
-    </span>
-    Winda Yani Hutasoit
-    <span class="inline-block">
-     <i class="fas fa-heart"></i>
-    </span>
-   </h2>
+            <!-- Card 3: Quiz -->
+            <div class="bg-white p-4 rounded-lg shadow-lg border-2 border-yellow-400 w-40">
+                <img src="quiz.png" alt="Quiz" class="mx-auto mb-2 h-24" />
+                <button class="border border-purple-500 bg-purple-400 text-white py-2 px-4 rounded-full hover:bg-purple-500 transition duration-300">Buka</button>
+            </div>
 
-   <!-- Kontainer Card -->
-   <div class="flex justify-center space-x-4 flex-wrap">
-    <!-- Card 1 -->
-    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
-     <img alt="surat.png" class="mx-auto mb-2" src="surat.png/100x100" />
-     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
+            <!-- Card 4: Hadiah -->
+            <div class="bg-white p-4 rounded-lg shadow-lg border-2 border-yellow-400 w-40">
+                <img src="gift.png" alt="Hadiah" class="mx-auto mb-2 h-24" />
+                <button class="border border-green-500 bg-green-400 text-white py-2 px-4 rounded-full hover:bg-green-500 transition duration-300">Buka</button>
+            </div>
+
+            <!-- Card 5: Gallery -->
+            <div class="bg-white p-4 rounded-lg shadow-lg border-2 border-yellow-400 w-40">
+                <img src="gallery.png" alt="Gallery" class="mx-auto mb-2 h-24" />
+                <button class="border border-blue-500 bg-blue-400 text-white py-2 px-4 rounded-full hover:bg-blue-500 transition duration-300">Buka</button>
+            </div>
+
+        </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
-     <img alt="quotes.png" class="mx-auto mb-2" src="quotes.png/100x100" />
-     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
-    </div>
+</body>
 
-    <!-- Card 3 -->
-    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
-     <img alt="quiz.png" class="mx-auto mb-2" src="quiz.png/100x100" />
-     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
-     <img alt="hadiah.png" class="mx-auto mb-2" src="hadiah.png/100x100" />
-     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
-     <img alt="gallery.png" class="mx-auto mb-2" src="gallery.png/100x100" />
-     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
-    </div>
-   </div>
-  </div>
- </body>
 </html>
-
