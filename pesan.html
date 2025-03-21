@@ -6,11 +6,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  
   <style>
    body {
      font-family: 'Roboto', sans-serif;
      background-color: #f5f5f5;
-     background-image: url('galeri.jpg');
+     background-image: url('galeri.jpg'); /* ✅ Background gambar */
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
@@ -19,33 +20,44 @@
      font-family: 'Great Vibes', cursive;
    }
    .typing {
-     white-space: pre-line; /* Biar line break (\n) kebaca */
+     white-space: pre-line; /* biar \n jadi enter */
    }
   </style>
  </head>
+ 
  <body class="flex items-center justify-center min-h-screen p-4">
+  
   <div class="relative bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto bg-opacity-80">
    <div class="relative z-10 p-6 bg-white bg-opacity-90 rounded-lg">
-    <h1 class="text-center text-4xl font-bold quote mb-4">" Pesan Cinta "</h1>
-    
+
+    <!-- Judul -->
+    <h1 class="text-center text-4xl font-bold quote mb-4 text-black">" Pesan Cinta "</h1> <!-- ✅ Warna hitam -->
+
+    <!-- Isi pesan -->
     <div class="bg-gray-100 p-6 rounded-lg shadow-lg relative bg-opacity-80">
+     
      <div class="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 text-6xl text-gray-400">
       <i class="fas fa-quote-left"></i>
      </div>
      
-     <!-- Ini tempat untuk efek mengetik -->
+     <!-- Efek mengetik -->
      <p id="typingText" class="text-gray-700 text-lg leading-relaxed text-center typing"></p>
      
      <div class="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 text-6xl text-gray-400">
       <i class="fas fa-quote-right"></i>
      </div>
-    </div>
     
+    </div>
+
+    <!-- Tombol BACK -->
     <div class="text-center mt-6">
-     <button class="bg-yellow-500 text-white px-6 py-2 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300">
-      BACK
+     <button 
+       onclick="window.location.href='beranda.html';" 
+       class="bg-yellow-500 text-white px-6 py-2 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300">
+       BACK
      </button>
     </div>
+
    </div>
   </div>
 
@@ -71,7 +83,7 @@ Semoga kebahagiaan selalu bersamamu, seperti kamu yang selalu membawa kebahagiaa
 💕 Aku mencintaimu, hari ini, esok, dan selamanya. 💕`;
 
     let index = 0;
-    const speed = 30; // kecepatan ngetik (ms per huruf)
+    const speed = 30; // kecepatan ngetiknya
     const typingText = document.getElementById("typingText");
 
     function typeWriter() {
@@ -82,7 +94,7 @@ Semoga kebahagiaan selalu bersamamu, seperti kamu yang selalu membawa kebahagiaa
       }
     }
 
-    // Mulai ngetik setelah load
+    // Mulai ngetik setelah halaman selesai dimuat
     window.onload = typeWriter;
   </script>
 
