@@ -1,176 +1,121 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selamat Ulang Tahun Winda</title>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Fonts: Shrikhand -->
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" />
+
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      background: linear-gradient(to bottom, #ffb6c1, #98fb98);
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      background-image: url('beranda.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    header {
-      background-color: rgba(255, 182, 193, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 600px;
+    .font-shrikhand {
+      font-family: 'Shrikhand', cursive;
     }
 
-    .welcome {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 30px;
-      margin: 30px auto;
-      border-radius: 15px;
-      max-width: 90%;
-    }
-
-    .grid-menu-container {
-      overflow-x: auto;
-      padding: 10px 0;
-    }
-
-    .grid-menu {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 20px;
-      justify-content: flex-start;
-      padding: 10px;
-    }
-
-    .grid-menu a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: #ff69b4;
+    .text-outline {
       color: white;
-      padding: 20px;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-      width: 120px;
-      min-width: 120px;
-      height: 120px;
-      flex: 0 0 auto;
-      transition: background-color 0.3s, transform 0.3s;
+      text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
     }
 
-    .grid-menu a:hover {
-      background-color: #ff1493;
+    .underline-decor {
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 2px;
+    }
+
+    /* Custom button border */
+    .btn-border {
+      border: 2px solid #d4af37; /* warna emas */
+      transition: all 0.3s ease;
+    }
+
+    .btn-border:hover {
+      background-color: #d4af37; /* hover warna emas */
+      color: white;
       transform: scale(1.05);
-    }
-
-    .grid-menu img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background-color: rgba(152, 251, 152, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 600px;
-    }
-
-    .grid-menu-container::-webkit-scrollbar {
-      height: 8px;
-    }
-    .grid-menu-container::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    .grid-menu-container::-webkit-scrollbar-thumb {
-      background: #ff69b4;
-      border-radius: 4px;
-    }
-    .grid-menu-container::-webkit-scrollbar-thumb:hover {
-      background: #ff1493;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
   </style>
-</head>
-<body>
+ </head>
 
-  <header>
-    <h1> 🎉 Selamat Ulang Tahun, Winda Yani Hutasoit 🎉</h1>
-  </header>
+ <body class="flex items-center justify-center min-h-screen bg-cover bg-center">
+  <div class="text-center">
+   <!-- Judul Utama -->
+   <h1 class="text-5xl font-shrikhand text-outline underline-decor mb-4">
+    <span class="inline-block">
+     <i class="fas fa-party-hat"></i>
+    </span>
+    Happy Birthday
+    <span class="inline-block">
+     <i class="fas fa-party-hat"></i>
+    </span>
+   </h1>
 
-  <main class="welcome">
-    <h2>Winda, hari ini adalah hari spesial untukmu!</h2>
-    <p>Aku telah menyiapkan sesuatu yang spesial untukmu di website ini. Selamat Menikmati!</p>
+   <!-- Subjudul -->
+   <h2 class="text-4xl font-shrikhand text-outline underline-decor mb-8">
+    <span class="inline-block">
+     <i class="fas fa-heart"></i>
+    </span>
+    Winda Yani Hutasoit
+    <span class="inline-block">
+     <i class="fas fa-heart"></i>
+    </span>
+   </h2>
 
-    <div class="grid-menu-container">
-      <div class="grid-menu">
-        <a href="surat.html">
-          <img src="surat.png" alt="Surat Cinta">
-          Surat Cinta
-        </a>
-        <a href="quotes.html">
-          <img src="quotes.png" alt="Quotes">
-          Quotes
-        </a>
-        <a href="kuis.html">
-          <img src="quiz.png" alt="Quiz">
-          Quiz
-        </a>
-        <a href="hadiah.html">
-          <img src="gift.png" alt="Hadiah">
-          Hadiah
-        </a>
-        <a href="galeri.html">
-          <img src="gallery.png" alt="Galeri">
-          Galeri
-        </a>
-      </div>
+   <!-- Kontainer Card -->
+   <div class="flex justify-center space-x-4 flex-wrap">
+    <!-- Card 1 -->
+    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
+     <img alt="Envelope with heart" class="mx-auto mb-2" src="https://placehold.co/100x100" />
+     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
     </div>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Dibuat dengan cinta oleh Dimas 💖</p>
-  </footer>
+    <!-- Card 2 -->
+    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
+     <img alt="Speech bubble with quotes" class="mx-auto mb-2" src="https://placehold.co/100x100" />
+     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
+    </div>
 
-  <!-- Audio player -->
-  <audio id="backgroundMusic" src="romantic-music12.mp3" loop></audio>
+    <!-- Card 3 -->
+    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
+     <img alt="Quiz icons" class="mx-auto mb-2" src="https://placehold.co/100x100" />
+     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
+    </div>
 
-  <script>
-    const backgroundMusic = document.getElementById('backgroundMusic');
+    <!-- Card 4 -->
+    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
+     <img alt="Gift box" class="mx-auto mb-2" src="https://placehold.co/100x100" />
+     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
+    </div>
 
-    // Cek apakah user udah klik tombol buka kado di halaman sebelumnya
-    const musicStatus = localStorage.getItem('musicPlaying');
-
-    // Kalau sudah, langsung putar musiknya
-    if (musicStatus === 'true') {
-      playMusic();
-    }
-
-    // Kalau browser butuh klik user, pasang listener
-    document.body.addEventListener('click', playMusic);
-
-    function playMusic() {
-      backgroundMusic.play().then(() => {
-        console.log("Musik diputar");
-        localStorage.setItem('musicPlaying', 'true');
-        // Hapus event listener setelah musik berhasil play
-        document.body.removeEventListener('click', playMusic);
-      }).catch(err => {
-        console.log("Browser butuh klik user buat play musik:", err);
-      });
-    }
-  </script>
-
-</body>
+    <!-- Card 5 -->
+    <div class="bg-white p-4 rounded-lg shadow-lg w-40">
+     <img alt="Image icon" class="mx-auto mb-2" src="https://placehold.co/100x100" />
+     <button class="btn-border bg-yellow-600 text-white py-2 px-4 rounded-full w-full">Buka</button>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>
