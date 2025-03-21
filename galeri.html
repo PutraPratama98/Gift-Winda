@@ -4,18 +4,13 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Pinterest Gallery</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <style>
     body {
       background-image: url('galeri.jpg');
-      background-size: cover;
-      background-position: center;
+      background-size: cover; /* Atau 'contain' tergantung kebutuhan */
+      background-position: center center;
       background-repeat: no-repeat;
-      min-height: 100vh;
-    }
-
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.2); /* Super transparan */
-      backdrop-filter: blur(2px); /* Biar teks lebih kebaca, opsional */
       min-height: 100vh;
     }
   </style>
@@ -23,7 +18,7 @@
 <body>
   <div class="flex min-h-screen">
     <!-- Sidebar -->
-    <div class="w-16 h-screen flex flex-col items-center py-4 space-y-4 bg-white bg-opacity-50 backdrop-blur-md shadow-lg">
+    <div class="w-16 h-screen flex flex-col items-center py-4 space-y-4 bg-white bg-opacity-80 backdrop-blur-md shadow-lg">
       <a class="text-black text-2xl" href="beranda.html">
         <i class="fas fa-home"></i>
       </a>
@@ -49,7 +44,7 @@
           <div class="mb-4">
             <img src="https://placehold.co/300x450" alt="Image 4" class="rounded-lg">
           </div>
-          <!-- Tambahin item lainnya -->
+          <!-- Tambah gambar lainnya -->
         </div>
       </div>
     </div>
