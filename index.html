@@ -12,65 +12,89 @@
   <!-- Google Font Shrikhand -->
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 
+  <!-- Custom Style -->
   <style>
     body {
       font-family: 'Arial', sans-serif;
     }
+
     .text-stroke {
-      -webkit-text-stroke: 2px #000;
+      -webkit-text-stroke: 2px #000; /* Garis tepi teks */
     }
   </style>
 </head>
 
-<body class="flex items-center justify-center min-h-screen bg-[#d2b48c] relative overflow-hidden">
-  
-  <!-- Background utama -->
-  <img
-    src="index.jpg"
-    alt="Background"
-    class="absolute inset-0 w-full h-full object-cover z-0"
-  />
+<body class="flex flex-col items-center justify-center min-h-screen bg-[#d2b48c] relative overflow-hidden">
 
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
+  <!-- Audio Background (hidden) -->
+  <audio id="bg-music" loop>
+    <source src="romantic-music1.mp3" type="audio/mpeg" />
+    Browser kamu tidak mendukung audio.
+  </audio>
 
-  <!-- Konten Utama -->
-  <div class="relative z-10 flex flex-col items-center justify-center text-center p-4">
-    
-    <!-- Judul -->
-    <h1
-      class="text-4xl md:text-5xl font-bold text-white underline drop-shadow-lg text-stroke mb-2"
-      style="font-family: 'Shrikhand', cursive;"
-    >
+  <!-- Background Gambar -->
+  <img src="index.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Background" />
+
+  <!-- Overlay agar teks lebih jelas -->
+  <div class="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
+
+  <!-- Halaman Utama -->
+  <div id="home" class="relative z-10 flex flex-col items-center justify-center text-center p-4">
+    <h1 class="text-4xl md:text-5xl font-bold text-white underline drop-shadow-lg text-stroke mb-2" style="font-family: 'Shrikhand', cursive;">
       Happy Birthday
     </h1>
 
-    <!-- Nama -->
-    <h2
-      class="text-3xl md:text-4xl font-bold text-white underline drop-shadow-lg text-stroke mb-6"
-      style="font-family: 'Shrikhand', cursive;"
-    >
+    <h2 class="text-3xl md:text-4xl font-bold text-white underline drop-shadow-lg text-stroke mb-6" style="font-family: 'Shrikhand', cursive;">
       Winda Yani Hutasoit
     </h2>
 
-    <!-- Foto -->
+    <!-- Foto Profil -->
     <div class="w-[400px] h-[400px] rounded-full border-[10px] border-yellow-500 overflow-hidden shadow-2xl mb-6 bg-white">
-      <img
-        src="icon-gift.jpg"
-        alt="Winda Yani Hutasoit"
-        class="w-full h-full object-cover"
-      />
+      <img src="icon-gift.png" alt="Winda Yani Hutasoit" class="w-full h-full object-cover" />
     </div>
 
     <!-- Tombol Buka -->
-    <a
-      href="beranda.html"
+    <button
+      onclick="openBeranda()"
       class="relative bg-[#8b4513] border-4 border-yellow-400 text-white text-3xl font-bold py-5 px-16 rounded-full shadow-2xl hover:bg-[#5c3310] transition duration-300 ease-in-out z-10"
     >
       Buka
-    </a>
-    
+    </button>
   </div>
+
+  <!-- Halaman Beranda (disembunyikan dulu) -->
+  <div id="beranda" class="hidden relative z-10 flex flex-col items-center justify-center text-center p-4">
+    <h1 class="text-5xl font-bold text-white mb-6 drop-shadow-lg" style="font-family: 'Shrikhand', cursive;">Beranda</h1>
+    <p class="text-white text-xl mb-4">Musiknya tetap diputar tanpa henti!</p>
+
+    <!-- Tombol kembali -->
+    <button
+      onclick="goHome()"
+      class="relative bg-[#8b4513] border-4 border-yellow-400 text-white text-xl font-bold py-3 px-10 rounded-full shadow-2xl hover:bg-[#5c3310] transition duration-300 ease-in-out z-10"
+    >
+      Kembali
+    </button>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const music = document.getElementById('bg-music');
+
+    function openBeranda() {
+      // Play musik ketika tombol Buka diklik
+      music.play();
+
+      // Navigasi dari halaman home ke beranda
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('beranda').classList.remove('hidden');
+    }
+
+    function goHome() {
+      // Navigasi dari halaman beranda ke home
+      document.getElementById('beranda').classList.add('hidden');
+      document.getElementById('home').classList.remove('hidden');
+    }
+  </script>
 
 </body>
 </html>
