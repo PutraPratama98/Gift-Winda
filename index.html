@@ -1,63 +1,66 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Selamat Ulang Tahun Winda</title>
+
+    <title>Happy Birthday</title>
+
+    <!-- TailwindCSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome untuk icon tambahan (kalau mau dipakai) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Styling tambahan -->
     <style>
-      body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-
-      .background {
-        background-image: url('/mnt/data/index.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100vh;
-        position: relative;
-      }
-
-      .center-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      body {
+        font-family: 'Arial', sans-serif; /* Gunakan font Arial */
+        background-color: #d2b48c; /* Warna latar belakang dasar */
       }
     </style>
   </head>
 
-  <body>
-    <div class="background">
-      <!-- Ikon gift berada di tengah -->
-      <img
-        src="/mnt/data/gift-icon.png"
-        alt="Ikon Kado"
-        class="center-icon w-32 h-32 md:w-48 md:h-48 hover:scale-110 transition-transform duration-300 cursor-pointer"
-        onclick="tampilkanPesan()"
-      />
+  <body class="flex items-center justify-center min-h-screen bg-[#d2b48c]">
+    <!-- Kontainer utama -->
+    <div class="text-center">
+      <div class="relative inline-block">
+        <!-- Gambar background (index.jpg), sesuaikan URL ke repo GitHub kamu -->
+        <img
+          src="https://raw.githubusercontent.com/{username}/{repo}/{branch}/images/index.jpg"
+          alt="Background with decorations"
+          class="w-full h-auto"
+        />
 
-      <!-- Pesan tersembunyi -->
-      <div
-        id="pesan"
-        class="hidden absolute top-[60%] left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 rounded-lg p-6 shadow-xl text-center max-w-md"
-      >
-        <h1 class="text-2xl font-bold mb-4 text-[#8b4513]">Selamat Ulang Tahun!</h1>
-        <p class="text-[#333]">
-          Semoga Winda Yani selalu diberkahi kesehatan, kebahagiaan, dan sukses selalu! 🎉🎂
-        </p>
+        <!-- Layer untuk tulisan & elemen di atas gambar -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <!-- Judul utama -->
+          <h1 class="text-4xl font-bold text-white mb-2">Happy Birthday</h1>
+
+          <!-- Nama orang yang ulang tahun -->
+          <h2 class="text-3xl font-bold text-white mb-4">Winda Yani Hutasoit</h2>
+
+          <!-- Foto profil (kalau ada). Di sini aku ganti dengan ikon kado -->
+          <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white mb-4 bg-white flex items-center justify-center">
+            <!-- Ikon kado (icon-gift.png) -->
+            <img
+              src="https://raw.githubusercontent.com/{username}/{repo}/{branch}/images/icon-gift.png"
+              alt="Gift Icon"
+              class="w-24 h-24 object-contain"
+            />
+          </div>
+
+          <!-- Tombol interaktif -->
+          <button
+            class="bg-[#8b4513] text-white font-bold py-2 px-4 rounded-full hover:bg-[#5c3310] transition duration-300"
+          >
+            Buka
+          </button>
+        </div>
       </div>
     </div>
-
-    <script>
-      function tampilkanPesan() {
-        const pesan = document.getElementById('pesan');
-        pesan.classList.toggle('hidden');
-      }
-    </script>
   </body>
 </html>
