@@ -4,63 +4,57 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Happy Birthday</title>
+    <title>Happy Birthday Winda</title>
 
-    <!-- TailwindCSS untuk styling -->
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome untuk icon tambahan (kalau mau dipakai) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-
-    <!-- Styling tambahan -->
+    <!-- Font Style tambahan (optional) -->
     <style>
       body {
-        font-family: 'Arial', sans-serif; /* Gunakan font Arial */
-        background-color: #d2b48c; /* Warna latar belakang dasar */
+        font-family: 'Arial', sans-serif;
       }
     </style>
   </head>
 
-  <body class="flex items-center justify-center min-h-screen bg-[#d2b48c]">
-    <!-- Kontainer utama -->
-    <div class="text-center">
-      <div class="relative inline-block">
-        <!-- Gambar background (index.jpg), sesuaikan URL ke repo GitHub kamu -->
+  <body class="flex items-center justify-center min-h-screen bg-[#d2b48c] relative overflow-hidden">
+    <!-- Background utama -->
+    <img
+      src="https://raw.githubusercontent.com/{username}/{repo}/{branch}/index.jpg"
+      alt="Background"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    />
+
+    <!-- Overlay agar teks tetap terbaca -->
+    <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
+
+    <!-- Kontainer utama isi ucapan -->
+    <div class="relative z-10 flex flex-col items-center justify-center text-center p-4">
+      <!-- Judul Ucapan -->
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
+        Happy Birthday
+      </h1>
+
+      <!-- Nama -->
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
+        Winda Yani Hutasoit
+      </h2>
+
+      <!-- Foto Profil -->
+      <div class="w-48 h-48 rounded-full border-[6px] border-yellow-500 overflow-hidden shadow-lg mb-6 bg-white">
         <img
-          src="https://raw.githubusercontent.com/{username}/{repo}/{branch}/images/index.jpg"
-          alt="Background with decorations"
-          class="w-full h-auto"
+          src="https://raw.githubusercontent.com/{username}/{repo}/{branch}/winda.jpg"
+          alt="Winda Yani Hutasoit"
+          class="w-full h-full object-cover"
         />
-
-        <!-- Layer untuk tulisan & elemen di atas gambar -->
-        <div class="absolute inset-0 flex flex-col items-center justify-center">
-          <!-- Judul utama -->
-          <h1 class="text-4xl font-bold text-white mb-2">Happy Birthday</h1>
-
-          <!-- Nama orang yang ulang tahun -->
-          <h2 class="text-3xl font-bold text-white mb-4">Winda Yani Hutasoit</h2>
-
-          <!-- Foto profil (kalau ada). Di sini aku ganti dengan ikon kado -->
-          <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white mb-4 bg-white flex items-center justify-center">
-            <!-- Ikon kado (icon-gift.png) -->
-            <img
-              src="https://raw.githubusercontent.com/{username}/{repo}/{branch}/images/icon-gift.png"
-              alt="Gift Icon"
-              class="w-24 h-24 object-contain"
-            />
-          </div>
-
-          <!-- Tombol interaktif -->
-          <button
-            class="bg-[#8b4513] text-white font-bold py-2 px-4 rounded-full hover:bg-[#5c3310] transition duration-300"
-          >
-            Buka
-          </button>
-        </div>
       </div>
+
+      <!-- Tombol Buka -->
+      <button
+        class="bg-[#8b4513] text-white text-xl font-bold py-3 px-8 rounded-full shadow-md hover:bg-[#5c3310] transition duration-300 ease-in-out"
+      >
+        Buka
+      </button>
     </div>
   </body>
 </html>
